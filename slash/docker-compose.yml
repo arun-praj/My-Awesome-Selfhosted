@@ -1,0 +1,10 @@
+version: "3"
+services:
+    slash:
+        image: yourselfhosted/slash:latest
+        container_name: "slash_dashboard"
+        ports:
+            - 5231:5231
+        volumes:
+            - ./slash/:/var/opt/slash
+        restart: always
