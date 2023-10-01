@@ -1,0 +1,25 @@
+entryPoints:
+  web:
+    address: ":80"
+    http:
+      redirections:
+        entryPoint:
+          to: websecure
+          scheme: https
+          permanent: true
+  websecure:
+    address: ":443"
+    http:
+      tls:
+        certResolver: default
+providers:
+  docker:
+    watch: true
+    exposedByDefault: false
+certificatesResolvers:
+  default:
+    acme:
+      email: arunkp1122@gmail.com
+      storage: acme.json
+      caServer: "https://acme-v01.api.letsencrypt.org/directory"
+      tlsChallenge: {}

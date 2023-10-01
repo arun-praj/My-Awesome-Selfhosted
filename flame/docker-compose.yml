@@ -2,6 +2,7 @@ version: "3"
 services:
     flame:
         image: pawelmalak/flame
+        restart: always
         ports:
             - "5005:5005"
         volumes:
